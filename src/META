@@ -1,0 +1,12 @@
+# OASIS_START
+# DO NOT EDIT (digest: 91297fbf52a586babc8fc090097fdee4)
+version = "1.0"
+description = "Taste of Riak sample app"
+requires = "lwt lwt.unix lwt.syntax piqi.runtime riak-pb"
+archive(byte) = "riak.cma"
+archive(byte, plugin) = "riak.cma"
+archive(native) = "riak.cmxa"
+archive(native, plugin) = "riak.cmxs"
+exists_if = "riak.cma"
+# OASIS_STOP
+
