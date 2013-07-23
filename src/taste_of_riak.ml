@@ -66,12 +66,13 @@ let delete_some_data conn bucket key =
 
 let _ =
   run (
+    let pbhost = "127.0.0.1" in
     let pbip = 10017 in
     let my_bucket = "MyBucket" in
     let my_key    = "MyKey" in
     let my_value  = "MyValue" in
     try_lwt
-      lwt conn = riak_connect_with_defaults "127.0.0.1" pbip in
+      lwt conn = riak_connect_with_defaults pbhost pbip in
       lwt _result = my_ping conn in
       lwt _ = put_some_data conn my_bucket my_key my_value in
       lwt _ = get_some_data conn my_bucket my_key in
